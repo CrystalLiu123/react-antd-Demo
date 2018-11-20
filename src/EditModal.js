@@ -3,7 +3,7 @@ import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import 'moment/locale/zh-cn';
 import React, { Component } from 'react'
 import { Modal, Button, Form, Input, DatePicker,  Select} from 'antd';
-import './EditForm.css'
+import './EditModal.css'
 import moment from 'moment';
 
 const Option = Select.Option;
@@ -94,7 +94,7 @@ class EditForm extends Component {
                 </FormItem>
                 {this.props.form.getFieldValue('status') === '已完成' && <FormItem {...formItemLayout} label="完成时间：" >
                     {getFieldDecorator('endtime', {
-                         rules: [{ required: true, message: '开始时间不能为空！'}
+                         rules: [{ required: true, message: '完成时间不能为空！'}
                          , {validator: this.checkEndTime}
                         ]
                     })(<DatePicker showTime format="YYYY-MM-DD HH:mm" />)

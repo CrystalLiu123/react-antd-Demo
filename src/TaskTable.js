@@ -79,7 +79,7 @@ class TaskTable extends Component {
             okType: 'danger',
             cancelText: '取消',
             onOk:() => {
-                this.delete(key);
+                this.props.delete(key);
             },
             onCancel(){ }
         })
