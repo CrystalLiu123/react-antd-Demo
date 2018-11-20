@@ -1,0 +1,23 @@
+.TaskTable{
+    width: 800px;
+    margin:0px auto 0px auto;
+}
+td{
+    text-align: center;
+}
+th div{
+    text-align: center;
+}
+a{
+    margin:0px 7px;
+}
+
+a:hover{
+    color: slategray;
+    text-decoration: none;
+}
+
+.redo:hover{
+    color: #fa4e4e;
+} 
+
