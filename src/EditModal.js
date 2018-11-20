@@ -46,12 +46,11 @@ class EditForm extends Component {
 
     render(){
         const { getFieldDecorator } = this.props.form;
-        //表单布局
         const formItemLayout = {
-            labelCol:{  //标签列
+            labelCol:{  //标签布局
                 sm: {span: 6}
             },
-            wrapperCol:{    //表单元素列
+            wrapperCol:{    //输入控件布局
                 sm: {span: 18}
             }
         };
@@ -71,7 +70,7 @@ class EditForm extends Component {
                 </FormItem>
                 <FormItem {...formItemLayout} label="任务名：">
                     {getFieldDecorator('name',{
-                        rules:[{ required: true, message: '任务名不能为空！'}]
+                        rules:[{ required: true, message: '任务名不能为空！', whitespace: true }]
                         })(<Input />)
                     }
                 </FormItem>
@@ -108,9 +107,11 @@ class EditForm extends Component {
     }
 }
 const EditModal = Form.create({
+    //把父组件的属性映射到表单项上
     //赋初值, 日期在 antd 中要传 moment 类型
     mapPropsToFields(props){
         return{
+            //Form.createFormField,用于标记 mapPropsToFields 返回的表单域数据
             key: Form.createFormField({ value: props.initValues.key }),
             status: Form.createFormField({ value: props.initValues.status }),
             name: Form.createFormField({ value: props.initValues.name }),

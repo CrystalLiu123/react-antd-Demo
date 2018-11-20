@@ -24,7 +24,7 @@ class AddForm extends Component{
                 <FormItem label="请输入任务事项：" >
                     {
                         getFieldDecorator('taskName',{
-                            rules:[{ required: true, message: '任务名不能为空!' }]
+                            rules:[{ required: true, message: '任务名不能为空!', whitespace: true }]
                         })(<Input className="AddInput" />)
                     }
                 </FormItem>
